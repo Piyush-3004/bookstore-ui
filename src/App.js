@@ -1,91 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
-import uxenglish from './uxenglish.png'
-import dontmakemethink from './book1.png'
-import sharepoint from './SharePoint.png'
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import React , { useEffect,  useState } from 'react'
-import axios from 'axios'
-import reactmaterialui from './reactmaterial-ui.png'
-import bookicon from './bookicon.png'
-import carticon from './carticon.png'
+import React, { useEffect, useState } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Dashboard from './bookstore/Dashboard';
+import Cart from './bookstore/Cart'
+import Order from './bookstore/Order';
+import Loginpg from './bookstore/Loginpg';
+
 function App() {
+  const [token,setTokn]=useState();
 
-  const [book, setBook] = useState({
-    name: '',
-    author: '',
-    desc: '',
-    logo: '',
-    price: '',
-    quantity: '',
-  })
-  useEffect(() => {
-    getBooks();
-  }, []);
+useEffect(()=>{setTokn(localStorage.getItem('token'));})
 
-  const getBooks = () => {
-    axios.get('http://localhost:9090/bookstore/book/getlist').then((response) => {
-      
-      console.log(response);
-        setBook(response.data)})
-        return book;
-        
-    }
+  // const setToken = ()=>{setTokn()}
+  // const [token, setToken] = useState('')
+  // const getToken = () => {
+  //     axios.get('http://localhost:9090/bookstore/login/piyushp0541@gmail.com/12345')
+  //         .then((res) => {
+  //             setToken(res.data)
+  //         })
+  // }
 
-  const getImg = (name)=>{
-    if (name=='uxenglish'){
-       return (`${uxenglish}`)
-    }
-    if (name=='dontmakemethink'){
-      return(`${dontmakemethink}`)
-    }
-    if (name=='reactmaterial-ui'){
-      return(`${reactmaterialui}`)
-    }
-    if (name=='sharepoint'){
-      return(`${sharepoint}`)
-    }
-  }
+  // setTokn(localStorage.getItem('token'))
+  // console.log('in app'+token)
+  // if(!token) {
+  //   return <Loginpg />
+  // }   
 
   return (
-
-
-
-
-    <div className='main'>
-      <div className="Appclass">
-      <div><img src={bookicon}/></div>
-      <div className='bookstoreheading'>BookStore</div>
-      <div className='searchbar'><input className='ip' type='search' /></div>
-      <div className='cartname'>Cart</div>
-      <div className='cartlogo'><img src={carticon} /></div>
-      </div>
-      <div className='headings' ><div className='bookheading'>Books</div>
-        <div className='count'>120items</div>
-      </div>
-      
-      <div className='booksbody'>
-      {Object.values(book).map((data) => (
-      <Grid fluid>
-        <Row around='xm'>
-          <Col xm={3}>
-
-              <div className='books'><div className='bookimg'>
-                <img className='img' src={getImg(data.name)} />
-              </div>
-                <div className='base'>
-                  <div className='title'>{data.name}</div>
-                  <div className='author'>{data.author}</div>
-                  <div className='price'>{data.price}</div>
-                  <div ><button className='btn'>Add to cart</button></div>
-                </div>
-              </div>
-          </Col>
-        </Row>
-      </Grid>
-           ))} 
-            </div>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Loginpg /> }/>
+      <Route path='/cart' element={<Cart />} />
+      <Route path='/order' element={<Order />} /> 
+      {/* <Route path='/' element={<Dashboard />} />  */}
+      <Route path='/' element={token== null ? <Navigate to="/login"/> : <Dashboard />} />
+    </Routes>
   );
 }
 

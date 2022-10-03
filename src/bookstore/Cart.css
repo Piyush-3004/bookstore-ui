@@ -1,0 +1,146 @@
+.container {
+    margin-left: 188px;
+    padding: 27px;
+    margin-top: 40px;
+    top: 112px;
+    left: 177px;
+    width: 566px;
+
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid lightgrey;
+    border-radius: 1px;
+}
+
+.container1 {
+    margin-bottom: -28px;
+    margin-left: -28px;
+    padding: 27px;
+    margin-top: 40px;
+    top: 112px;
+    left: 177px;
+    width: 510px;
+    height: 136px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid lightgrey;
+    border-radius: 1px;
+}
+
+.heading {
+    font: normal normal medium 18px/22px Lato;
+    height: 50px;
+}
+
+.box {
+    top: 188px;
+    left: 213px;
+    display: flex;
+    padding-left: 25px;
+    margin-bottom: 40px;
+}
+
+.author {
+    top: 213px;
+    left: 320px;
+    width: 63px;
+    height: 12px;
+    text-align: left;
+    font: normal normal normal 10px/12px Lato;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+.price {
+    top: 235px;
+    left: 320px;
+    width: 57px;
+    height: 18px;
+    text-align: left;
+    font: normal normal bold 15px/18px Lato;
+    letter-spacing: 0px;
+    color: #0A0102;
+    opacity: 1;
+}
+
+.innerbox {
+    display: flex;
+    padding-left: 35px;
+    flex-direction: column;
+    width: -webkit-fill-available;
+}
+
+.decbtn {
+    text-align-last: center;
+    border-radius: 50%;
+    /* top: 284px; */
+    /* left: 317px; */
+    width: 24px;
+    /* height: 24px; */
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    /* opacity: 1; */
+
+}
+
+.quantity {
+    text-align-last: center;
+    top: 284px;
+    left: 346px;
+    width: 41px;
+    height: 24px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    border-radius: 1px;
+    opacity: 1;
+}
+
+.quantitychanger {
+    display: flex;
+    margin-top: 20px;
+}
+
+.incrementquantity {
+    text-align-last: center;
+    border-radius: 50%;
+    top: 284px;
+    left: 392px;
+    width: 24px;
+    height: 24px;
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    border: 1px solid #DBDBDB;
+    opacity: 1;
+}
+
+.deleteicon {
+    width: 23px;
+}
+
+.orderbtn {
+    justify-content: flex-end;
+    display: flex;
+    align-self: end;
+}
+
+.continue {
+    margin-top: inherit;
+    text-align: -webkit-right;
+}
+
+.placeorderbtn {
+    color: white;
+    border: none;
+    margin-top: -17px;
+    width: 125px;
+    height: 35px;
+    background: #3371B5 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.imgcart {
+    top: 192px;
+    left: 213px;
+    width: 65px;
+    height: 85px;
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
